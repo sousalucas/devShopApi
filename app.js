@@ -5,8 +5,8 @@ var port = process.env.PORT || 3000;
 
 var router = express.Router();
 
-router.get('/', function (req, res) {
-  res.json({ message: 'Hello Message!' });
+router.get('/healthcheck', function (req, res) {
+  res.json({ message: 'OK!' });
 });
 
 app.use('/api', router);
