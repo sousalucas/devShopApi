@@ -14,5 +14,8 @@
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/sousalucas/devShopApi/issues"
+  },
+  "dependencies": {
+    "express": "~4.13.4"
   }
 }
