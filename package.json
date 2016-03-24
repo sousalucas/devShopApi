@@ -16,6 +16,7 @@
     "url": "https://github.com/sousalucas/devShopApi/issues"
   },
   "dependencies": {
-    "express": "~4.13.4"
+    "express": "~4.13.4",
+    "request": "^2.69.0"
   }
 }
