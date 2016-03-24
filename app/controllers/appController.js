@@ -6,7 +6,8 @@ var options = {
   url: 'https://api.github.com/users?page=4&per_page=9',
   headers: {
     'User-Agent': 'sousalucas'
-  }
+  },
+  timeout: 10000
 };
 
 AppController.prototype.getDevsList = function (callback) {
