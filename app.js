@@ -16,12 +16,8 @@ router.get('/healthcheck', function (req, res) {
 });
 
 router.route('/devs')
-
     .get(function(req, res, next) {
-        //res.json({ developers: [{ name: 'dev1', age: 25}, { name: 'dev2', age: 35}, { name: 'dev3', age: 28}] });
-
         appController.getDevsList(function(err, devs){
-
           if(err)
             res.status(400).send(err);
 
@@ -38,10 +34,14 @@ router.route('/devs')
         res.json({ message: 'Dev Fired!' });
     });
 
-router.route('/devs/:dev_id')
+router.get('/followers/:user', function (req, res) {
+      appController.getFollowers(req.params.user, function(err, user){
+        if(err)
+          res.status(400).send(err);
 
-    .get(function(req, res) {
-        res.json({ message: 'Dev selected: ' + req.params.dev_id });
+        res.status(200).json({count: user.followers});
+
+      });
     });
 
 app.use('/api', router);
