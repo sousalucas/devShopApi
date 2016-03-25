@@ -39,7 +39,9 @@ router.get('/followers/:user', function (req, res) {
         if(err)
           res.status(400).send(err);
 
-        res.status(200).json({count: user.followers});
+        var total = user ? user.followers : 0;
+
+        res.status(200).json({count: total});
 
       });
     });
